@@ -4,7 +4,7 @@ export var player_speed = 350
 export var acceleration = 10
 export var extra_gravity = 550
 export var jumpforce = 400
-
+export var vidas = 3
 
 var current_speed = Vector2(0,0)
 var raycast_down = null
