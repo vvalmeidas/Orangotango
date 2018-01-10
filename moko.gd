@@ -9,6 +9,7 @@ var current_speed = Vector2(0,0)
 var raycast_down = null
 var anim = "";
 var animacao = "";
+var pontos = 0;
 
 func _ready():
 	raycast_down = get_node("RayCast2D")
@@ -48,5 +49,9 @@ func _fixed_process(delta):
 	if animacao != anim:
 		get_node("Moko/AnimationPlayer").play(anim)
 		animacao = anim
+		
+	if(raycast_down.is_colliding() && raycast_down.get_collider().get_name() == "KinematicBodyBanana"):
+		pontos = pontos + 1
 	
+	print(pontos)
 	

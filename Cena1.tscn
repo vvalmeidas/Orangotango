@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=20 format=1]
 
 [ext_resource path="res://Plataforma psd 64 copy.tex" type="Texture" id=1]
-[ext_resource path="res://moko.gd" type="Script" id=2]
-[ext_resource path="res://spritestriptest.tex" type="Texture" id=3]
+[ext_resource path="res://banana.png" type="Texture" id=2]
+[ext_resource path="res://moko.gd" type="Script" id=3]
+[ext_resource path="res://spritestriptest.tex" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -24,27 +25,52 @@ points = Vector2Array( 74.9004, -3.39966, 93.2731, -5.02179, 91.6023, 18.3127, 6
 custom_solver_bias = 0.0
 points = Vector2Array( 63.2091, 45.0356, -95.4582, 46.7058, -97.1284, 3.2811, -82.6602, -3.39276, 74.9004, -3.39966 )
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 74.9004, -3.39966, 88.2619, -13.4207, 91.6023, 18.3127, 63.2091, 45.0356 )
 
-[sub_resource type="ConvexPolygonShape2D" id=12]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 63.2091, 45.0356, -95.4582, 46.7058, -97.1284, 3.2811, -75.416, -5.06982, 74.9004, -3.39966 )
 
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 362.795, 57.4232, 349.889, 49.895, 355.267, 44.1592, 367.097, 45.9517, 382.87, 67.8193 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 371.04, 69.6118, 355.625, 65.3099, 354.191, 59.2156, 358.852, 57.7817, 362.795, 57.4232, 382.87, 67.8193 )
+
 [sub_resource type="ConvexPolygonShape2D" id=13]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 6.55172, -14.1968, 9.77011, -9.35745, 9.54023, -2.90498, 4.25287, -5.32466, 1.49425, -12.5837 )
+points = Vector2Array( 394.7, 35.5556, 395.059, 20.1407, 401.87, 17.9898, 405.096, 23.3671, 405.096, 41.2914, 403.662, 49.5366 )
 
 [sub_resource type="ConvexPolygonShape2D" id=14]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 4.25287, -5.32466, 8.85057, 12.4197, -10.6897, 12.0164, -6.78162, -0.888565, 0.574711, -6.5345 )
+points = Vector2Array( 382.87, 43.8008, 394.7, 35.5556, 403.662, 49.5366, 395.776, 62.0836, 382.87, 67.8193 )
 
 [sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 367.097, 45.9517, 382.87, 43.8008, 382.87, 67.8193 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 6.55172, -14.1968, 9.77011, -9.35745, 9.54023, -2.90498, 4.25287, -5.32466, 1.49425, -12.5837 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 4.25287, -5.32466, 8.85057, 12.4197, -10.6897, 12.0164, -6.78162, -0.888565, 0.574711, -6.5345 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 0.574711, -6.5345, 1.49425, -12.5837, 4.25287, -5.32466 )
@@ -72,6 +98,7 @@ transform/pos = Vector2( 158.805, 470.297 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 276.336, -177.661 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -99,6 +126,7 @@ trigger = false
 
 [node name="KinematicBody2D1" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 660.912, -64.844 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -129,10 +157,10 @@ trigger = false
 transform/pos = Vector2( 421.459, 83.6129 )
 transform/scale = Vector2( 5.6631, 0.944568 )
 input/pickable = false
-shapes/0/shape = SubResource( 11 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 12 )
+shapes/1/shape = SubResource( 6 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -141,7 +169,7 @@ collision/margin = 0.08
 
 [node name="Plataforma psd 64 copy1" type="Sprite" parent="KinematicBody2D2"]
 
-transform/pos = Vector2( -3.56158, 16.123 )
+transform/pos = Vector2( -3.56158, 12.3503 )
 transform/scale = Vector2( 5.82265, 4.50812 )
 texture = ExtResource( 1 )
 
@@ -152,17 +180,53 @@ polygon = Vector2Array( -97.1284, 3.2811, -75.416, -5.06982, 74.9004, -3.39966, 
 shape_range = Vector2( 0, 1 )
 trigger = false
 
+[node name="KinematicBodyBanana" type="KinematicBody2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 12 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 13 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 14 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 15 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Sprite" type="Sprite" parent="KinematicBodyBanana"]
+
+transform/pos = Vector2( 379.1, 44.3242 )
+transform/scale = Vector2( 0.108721, 0.0978623 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBodyBanana"]
+
+build_mode = 0
+polygon = Vector2Array( 355.267, 44.1592, 367.097, 45.9517, 382.87, 43.8008, 394.7, 35.5556, 395.059, 20.1407, 401.87, 17.9898, 405.096, 23.3671, 405.096, 41.2914, 403.662, 49.5366, 395.776, 62.0836, 382.87, 67.8193, 371.04, 69.6118, 355.625, 65.3099, 354.191, 59.2156, 358.852, 57.7817, 362.795, 57.4232, 349.889, 49.895 )
+shape_range = Vector2( 0, 4 )
+trigger = false
+
 [node name="RigidBodyMoko" type="RigidBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 218.373, 9.25308 )
 input/pickable = false
-shapes/0/shape = SubResource( 13 )
+shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 6.06718, 0, 0, 3.45852, -8.52339, 24.5852 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 14 )
+shapes/1/shape = SubResource( 8 )
 shapes/1/transform = Matrix32( 6.06718, 0, 0, 3.45852, -8.52339, 24.5852 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 15 )
+shapes/2/shape = SubResource( 9 )
 shapes/2/transform = Matrix32( 6.06718, 0, 0, 3.45852, -8.52339, 24.5852 )
 shapes/2/trigger = false
 collision/layers = 1
@@ -182,7 +246,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 2 )
+script/script = ExtResource( 3 )
 player_speed = 350
 acceleration = 10
 extra_gravity = 550
@@ -192,7 +256,7 @@ jumpforce = 400
 
 transform/pos = Vector2( -8.57251, 12.2135 )
 transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RigidBodyMoko/Moko"]
