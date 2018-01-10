@@ -2,7 +2,7 @@ extends RigidBody2D
 
 export var player_speed = 350
 export var acceleration = 10
-export var extra_gravity = 500
+export var extra_gravity = 550
 export var jumpforce = 400
 
 var current_speed = Vector2(0,0)
@@ -30,23 +30,23 @@ func _fixed_process(delta):
 	
 	if (Input.is_key_pressed(KEY_LEFT)):  
 		move(-player_speed, acceleration, delta)
-		get_node("Sprite 2").set_flip_h(true)
+		get_node("Moko").set_flip_h(true)
 		anim = "andar"
 	
 	elif (Input.is_key_pressed(KEY_RIGHT)):  
 		move(player_speed, acceleration, delta)
-		get_node("Sprite 2").set_flip_h(false)
+		get_node("Moko").set_flip_h(false)
 		anim = "andar"
 	
 	else:
-		get_node("Sprite 2/AnimationPlayer").stop(true)
+		get_node("Moko/AnimationPlayer").stop(true)
 		anim = ""
 		
 	if (Input.is_key_pressed(KEY_SPACE) and is_on_ground()): 
 		set_axis_velocity(Vector2(0,-jumpforce))
 	
 	if animacao != anim:
-		get_node("Sprite 2/AnimationPlayer").play(anim)
+		get_node("Moko/AnimationPlayer").play(anim)
 		animacao = anim
 	
 	
