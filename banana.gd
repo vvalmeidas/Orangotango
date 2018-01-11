@@ -14,5 +14,5 @@ func _fixed_process(delta):
 		get_node("SpriteBanana").queue_free()
 		get_node("CollisionBanana").queue_free()
 		self.queue_free()
-		get_node("/root/Node2D/Pergunta/Label").show()
+		get_node("/root/Node2D/Pergunta/LabelPergunta").show()
 
