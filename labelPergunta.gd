@@ -4,6 +4,10 @@ extends Label
 # var a = 2
 # var b = "textvar"
 
+
+var pergunta1 = "Pq Britney é a rainha do POP?";
+export var resposta1 = "A";
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -11,4 +15,5 @@ func _ready():
 	pass
 
 func _fixed_process(delta):
-	self.set_text(str("Pontos: ", get_node("/root/Node2D/RigidBodyMoko").get("pontos")))
+	self.set_text(str(pergunta1))
+	
