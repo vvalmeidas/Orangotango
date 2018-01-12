@@ -35,3 +35,4 @@ func _fixed_process(delta):
 		self.set_pos(curPos)
 	else:
 		get_node("Label").set("custom_colors/font_color", Color(0,0,0))
+		self.set_pos(curPos)
