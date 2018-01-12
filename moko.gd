@@ -1,9 +1,9 @@
 extends RigidBody2D
 
-export var player_speed = 350
+export var player_speed = 400
 export var acceleration = 10
 export var extra_gravity = 550
-export var jumpforce = 400
+export var jumpforce = 420
 export var vidas = 3
 
 var current_speed = Vector2(0,0)
@@ -51,8 +51,6 @@ func _fixed_process(delta):
 		get_node("Moko/AnimationPlayer").play(anim)
 		animacao = anim
 	
-	print(pontos, " pontos!")
-	
+
 func set_pontos():
 	pontos = pontos + 10
-	

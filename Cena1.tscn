@@ -1,21 +1,22 @@
-[gd_scene load_steps=24 format=1]
+[gd_scene load_steps=26 format=1]
 
 [ext_resource path="res://Plataforma psd 64 copy.tex" type="Texture" id=1]
 [ext_resource path="res://banana.gd" type="Script" id=2]
 [ext_resource path="res://banana.png" type="Texture" id=3]
 [ext_resource path="res://moko.gd" type="Script" id=4]
 [ext_resource path="res://spritestriptest.tex" type="Texture" id=5]
-[ext_resource path="res://labelPergunta.gd" type="Script" id=6]
-[ext_resource path="res://GearedSlab-Bold.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://American Captain.fnt" type="BitmapFont" id=6]
+[ext_resource path="res://labelPergunta.gd" type="Script" id=7]
 [ext_resource path="res://labelPontos.gd" type="Script" id=8]
 [ext_resource path="res://bgTeste.tex" type="Texture" id=9]
+[ext_resource path="res://resposta.gd" type="Script" id=10]
 
-[sub_resource type="ConvexPolygonShape2D" id=19]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 75.8605, -2.12965, 93.6003, -3.98364, 92.7858, 18.008, 63.2091, 45.0356 )
 
-[sub_resource type="ConvexPolygonShape2D" id=20]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 63.2091, 45.0356, -95.4582, 46.7058, -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965 )
@@ -30,12 +31,12 @@ points = Vector2Array( 74.9004, -3.39966, 93.2731, -5.02179, 91.6023, 18.3127, 6
 custom_solver_bias = 0.0
 points = Vector2Array( 63.2091, 45.0356, -95.4582, 46.7058, -97.1284, 3.2811, -82.6602, -3.39276, 74.9004, -3.39966 )
 
-[sub_resource type="ConvexPolygonShape2D" id=17]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 209.674, -7.02963, 214.634, 21.8353, 63.2091, 45.0356, 75.9534, -2.21875 )
 
-[sub_resource type="ConvexPolygonShape2D" id=18]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -75.416, -5.06982, 75.9534, -2.21875, 63.2091, 45.0356, -95.4582, 46.7058, -97.1284, 3.2811 )
@@ -65,12 +66,12 @@ points = Vector2Array( 406.169, 47.5477, 382.87, 43.8008, 394.7, 35.5556, 408.68
 custom_solver_bias = 0.0
 points = Vector2Array( 405.096, 23.3671, 408.686, 36.2188, 394.7, 35.5556, 395.059, 20.1407, 401.87, 17.9898 )
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
+[sub_resource type="ConvexPolygonShape2D" id=16]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 5.38626, -1.49545, 8.85057, 12.4197, -10.6897, 12.0164, -8.26593, -2.90495, 0.574711, -6.5345 )
+points = Vector2Array( 5.38626, -1.49545, 6.99192, 11.8502, -10.6897, 12.0164, -8.26593, -2.90495, 0.574711, -6.5345 )
 
-[sub_resource type="ConvexPolygonShape2D" id=16]
+[sub_resource type="ConvexPolygonShape2D" id=17]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 5.38626, -1.49545, 0.574711, -6.5345, 1.49425, -12.5837, 6.55172, -14.1968, 9.77011, -9.35745, 9.54023, -2.90498 )
@@ -91,6 +92,11 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=15]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.1715, 10 )
+
 [node name="Node2D" type="Node2D"]
 
 transform/pos = Vector2( 158.805, 470.297 )
@@ -99,10 +105,10 @@ transform/pos = Vector2( 158.805, 470.297 )
 
 transform/pos = Vector2( 286.406, -222.977 )
 input/pickable = false
-shapes/0/shape = SubResource( 19 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 20 )
+shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -116,6 +122,33 @@ transform/scale = Vector2( 5.82265, 4.50812 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.6003, -3.98364, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="KinematicBody2D3" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 1118.93, -237.331 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Plataforma 1" type="Sprite" parent="KinematicBody2D3"]
+
+transform/pos = Vector2( 0.173126, 16.123 )
+transform/scale = Vector2( 5.82265, 4.50812 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D3"]
 
 build_mode = 0
 polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.6003, -3.98364, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
@@ -138,7 +171,7 @@ collision/margin = 0.08
 
 [node name="Plataforma 2" type="Sprite" parent="KinematicBody2D1"]
 
-transform/pos = Vector2( 1.96252, 17.9125 )
+transform/pos = Vector2( -0.813354, 11.4354 )
 transform/scale = Vector2( 5.82265, 4.50812 )
 texture = ExtResource( 1 )
 
@@ -151,24 +184,31 @@ trigger = false
 
 [node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 371.108, 18.157 )
 transform/scale = Vector2( 5.6631, 0.944568 )
 input/pickable = false
-shapes/0/shape = SubResource( 17 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 18 )
+shapes/1/shape = SubResource( 6 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Plataforma psd 64 copy1" type="Sprite" parent="KinematicBody2D2"]
 
 transform/pos = Vector2( 68.7907, 10.7554 )
 transform/scale = Vector2( 9.09118, 4.50812 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D2"]
 
@@ -176,9 +216,13 @@ build_mode = 0
 polygon = Vector2Array( -97.1284, 3.2811, -75.416, -5.06982, 75.9534, -2.21875, 209.674, -7.02963, 214.634, 21.8353, 63.2091, 45.0356, -95.4582, 46.7058 )
 shape_range = Vector2( 0, 1 )
 trigger = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="KinematicBodyBanana" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 270.635, -215.249 )
 input/pickable = false
 shapes/0/shape = SubResource( 7 )
@@ -218,10 +262,10 @@ trigger = false
 
 transform/pos = Vector2( 218.373, 9.25308 )
 input/pickable = false
-shapes/0/shape = SubResource( 15 )
+shapes/0/shape = SubResource( 16 )
 shapes/0/transform = Matrix32( 6.06718, 0, 0, 3.45852, -23.6286, -45.9056 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 16 )
+shapes/1/shape = SubResource( 17 )
 shapes/1/transform = Matrix32( 6.06718, 0, 0, 3.45852, -23.6286, -45.9056 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -242,10 +286,10 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 4 )
-player_speed = 350
+player_speed = 400
 acceleration = 10
 extra_gravity = 550
-jumpforce = 400
+jumpforce = 420
 vidas = 3
 pontos = 0
 
@@ -287,6 +331,9 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RayCast2D" type="RayCast2D" parent="RigidBodyMoko"]
 
@@ -311,7 +358,7 @@ type_mask = 15
 transform/pos = Vector2( -23.6286, -45.9056 )
 transform/scale = Vector2( 6.06718, 3.45852 )
 build_mode = 0
-polygon = Vector2Array( 0.574711, -6.5345, -8.26593, -2.90495, -10.6897, 12.0164, 8.85057, 12.4197, 5.38626, -1.49545, 9.54023, -2.90498, 9.77011, -9.35745, 6.55172, -14.1968, 1.49425, -12.5837 )
+polygon = Vector2Array( 0.574711, -6.5345, -8.26593, -2.90495, -10.6897, 12.0164, 6.99192, 11.8502, 5.38626, -1.49545, 9.54023, -2.90498, 9.77011, -9.35745, 6.55172, -14.1968, 1.49425, -12.5837 )
 shape_range = Vector2( 0, 1 )
 trigger = false
 
@@ -324,20 +371,25 @@ scale = Vector2( 1, 1 )
 
 [node name="LabelPergunta" type="Label" parent="Pergunta"]
 
-visibility/visible = false
+rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 420.0
-margin/top = 551.0
-margin/right = 556.0
-margin/bottom = 589.0
+margin/left = 446.0
+margin/top = 502.0
+margin/right = 582.0
+margin/bottom = 616.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.0664063, 0.0578461, 0.0578461, 1 )
+text = "2x2"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = ExtResource( 6 )
-resposta1 = "A"
+script/script = ExtResource( 7 )
+respAtual = 0
+indiceAtual = 0
+perguntas = [  ]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -348,16 +400,17 @@ scale = Vector2( 1, 1 )
 
 [node name="LabelPontos" type="Label" parent="HUD"]
 
+rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 471.0
-margin/top = 37.0
-margin/right = 607.0
-margin/bottom = 75.0
-custom_fonts/font = ExtResource( 7 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+margin/left = 444.0
+margin/top = 30.0
+margin/right = 752.0
+margin/bottom = 147.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.334091, 0.553879, 0.589844, 1 )
 text = "Pontos: "
 percent_visible = 1.0
 lines_skipped = 0
@@ -366,6 +419,7 @@ script/script = ExtResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -382,6 +436,9 @@ scroll/ignore_camera_zoom = false
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1200, 600 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TextureFrame" type="TextureFrame" parent="ParallaxBackground/ParallaxLayer"]
 
@@ -397,5 +454,84 @@ margin/bottom = 597.0
 texture = ExtResource( 9 )
 expand = true
 stretch_mode = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Resposta" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 1121.25, -268.57 )
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 3.17093, -4.37609, -2.45401 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Resposta"]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -22.0
+margin/top = -49.0
+margin/right = 46.0
+margin/bottom = 65.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Resposta"]
+
+transform/pos = Vector2( -4.37609, -2.45401 )
+transform/scale = Vector2( 2.11709, 3.17093 )
+shape = SubResource( 15 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Resposta1" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 276.442, -253.765 )
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 2.23417, 0, 0, 3.24211, 8.85594, -1.5287 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Resposta1"]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -22.0
+margin/top = -49.0
+margin/right = 46.0
+margin/bottom = 65.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "18"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Resposta1"]
+
+transform/pos = Vector2( 8.85594, -1.5287 )
+transform/scale = Vector2( 2.23417, 3.24211 )
+shape = SubResource( 15 )
+trigger = false
+_update_shape_index = 0
 
 
