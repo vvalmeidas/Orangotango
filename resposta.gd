@@ -1,12 +1,10 @@
 extends KinematicBody2D
 
 onready var resp = int(get_node("Label").get_text())
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
+onready var spriteVidas = get_node("/root/Node2D/HUD/SpriteVidas");
 onready var moko = get_node("/root/Node2D/RigidBodyMoko");
 onready var pergunta = get_node("/root/Node2D/Pergunta/LabelPergunta");
+onready var timer = get_node("Timer");
 var curPos = self.get_pos();
 
 func _ready():
@@ -30,9 +28,20 @@ func _fixed_process(delta):
 			
 		self.queue_free()
 		
-	elif(is_colliding() && resp != pergunta.get("respAtual")):
+	elif(is_colliding() && resp != pergunta.get("respAtual") && timer != null):
 		get_node("Label").set("custom_colors/font_color", Color(1,0,0))
 		self.set_pos(curPos)
+		moko.set("vidas", moko.get("vidas") - 1)
+		spriteVidas.set_frame(moko.get("vidas"))
+		timer.connect("timeout", self, "_on_timer_timeout")
+		timer.set_wait_time(1)
+		timer.start()
+		self.set_fixed_process(false)
+		
 	else:
 		get_node("Label").set("custom_colors/font_color", Color(0,0,0))
 		self.set_pos(curPos)
+		
+
+func _on_timer_timeout():
+	self.set_fixed_process(true)
