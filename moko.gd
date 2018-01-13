@@ -40,10 +40,16 @@ func _fixed_process(delta):
 		get_node("Moko").set_flip_h(false)
 		anim = "andar"
 	
+	elif (raycast_down.is_colliding() && raycast_down.get_collider().get_name() == "PlataformaMovel"):
+			# Atualizando a posição do player à medida que a plataforma se move
+			set_pos(Vector2((raycast_down.get_collider().get_pos().x + 15), self.get_pos().y)) 
+			get_node("Moko/AnimationPlayer").stop(true)
+			anim = ""
+	
 	else:
 		get_node("Moko/AnimationPlayer").stop(true)
 		anim = ""
-		
+	
 	if (Input.is_key_pressed(KEY_SPACE) and is_on_ground()): 
 		set_axis_velocity(Vector2(0,-jumpforce))
 	
@@ -52,5 +58,3 @@ func _fixed_process(delta):
 		animacao = anim
 	
 
-func set_pontos():
-	pontos = pontos + 10

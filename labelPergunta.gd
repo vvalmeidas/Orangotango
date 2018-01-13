@@ -8,17 +8,16 @@ extends Label
 var pergunta1 = "Pq Britney é a rainha do POP?";
 export var respAtual = 0;
 export var indiceAtual = 0;
-var perguntaAtual = "";
-
 export var perguntas = [];
+var perguntaAtual = "";
 var respostas = [];
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	perguntas.append("2x2")
+	perguntas.append("2 x 2")
 	respostas.append(4)
-	perguntas.append("6x3")
+	perguntas.append("6 x 3")
 	respostas.append(18)
 	perguntaAtual = perguntas[0]
 	respAtual = respostas[0]
