@@ -40,7 +40,7 @@ func _fixed_process(delta):
 		get_node("Moko").set_flip_h(false)
 		anim = "andar"
 	
-	elif (raycast_down.is_colliding() && raycast_down.get_collider().get_name() == "PlataformaMovel"):
+	elif (raycast_down.is_colliding() and raycast_down.get_collider() != null and raycast_down.get_collider().get_name() == "PlataformaMovel"):
 			# Atualizando a posição do player à medida que a plataforma se move
 			set_pos(Vector2((raycast_down.get_collider().get_pos().x + 15), self.get_pos().y)) 
 			get_node("Moko/AnimationPlayer").stop(true)
