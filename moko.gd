@@ -3,7 +3,7 @@ extends RigidBody2D
 export var player_speed = 400
 export var acceleration = 10
 export var extra_gravity = 550
-export var jumpforce = 420
+export var jumpforce = 450
 export var vidas = 3
 
 var current_speed = Vector2(0,0)
@@ -33,16 +33,19 @@ func _fixed_process(delta):
 	if (Input.is_key_pressed(KEY_LEFT)):  
 		move(-player_speed, acceleration, delta)
 		get_node("Moko").set_flip_h(true)
+		set_applied_force(Vector2(0, extra_gravity))
 		anim = "andar"
 	
 	elif (Input.is_key_pressed(KEY_RIGHT)):  
 		move(player_speed, acceleration, delta)
 		get_node("Moko").set_flip_h(false)
+		set_applied_force(Vector2(0, extra_gravity))
 		anim = "andar"
 	
 	elif (raycast_down.is_colliding() and raycast_down.get_collider() != null and raycast_down.get_collider().get_name() == "PlataformaMovel"):
 			# Atualizando a posição do player à medida que a plataforma se move
-			set_pos(Vector2((raycast_down.get_collider().get_pos().x + 15), self.get_pos().y)) 
+			current_speed = raycast_down.get_collider().velocity
+			set_applied_force(Vector2(0, 10000))
 			get_node("Moko/AnimationPlayer").stop(true)
 			anim = ""
 	
@@ -52,7 +55,8 @@ func _fixed_process(delta):
 	
 	if (Input.is_key_pressed(KEY_SPACE) and is_on_ground()): 
 		set_axis_velocity(Vector2(0,-jumpforce))
-	
+		set_applied_force(Vector2(0, extra_gravity))
+		
 	if animacao != anim:
 		get_node("Moko/AnimationPlayer").play(anim)
 		animacao = anim
