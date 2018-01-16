@@ -30,35 +30,41 @@ func move(speed, acc, delta):
 
 func _fixed_process(delta):
 	
-	if (Input.is_key_pressed(KEY_LEFT)):  
-		move(-player_speed, acceleration, delta)
-		get_node("Moko").set_flip_h(true)
-		set_applied_force(Vector2(0, extra_gravity))
-		anim = "andar"
-	
-	elif (Input.is_key_pressed(KEY_RIGHT)):  
-		move(player_speed, acceleration, delta)
-		get_node("Moko").set_flip_h(false)
-		set_applied_force(Vector2(0, extra_gravity))
-		anim = "andar"
-	
-	elif (raycast_down.is_colliding() and raycast_down.get_collider() != null and raycast_down.get_collider().get_name() == "PlataformaMovel"):
-			# Atualizando a posição do player à medida que a plataforma se move
-			current_speed = raycast_down.get_collider().velocity
-			set_applied_force(Vector2(0, 10000))
+	if(get_node("Moko") != null):
+		if (Input.is_key_pressed(KEY_LEFT)):  
+			move(-player_speed, acceleration, delta)
+			get_node("Moko").set_flip_h(true)
+			set_applied_force(Vector2(0, extra_gravity))
+			anim = "andar"
+		
+		elif (Input.is_key_pressed(KEY_RIGHT)):  
+			move(player_speed, acceleration, delta)
+			get_node("Moko").set_flip_h(false)
+			set_applied_force(Vector2(0, extra_gravity))
+			anim = "andar"
+		
+		elif (raycast_down.is_colliding() and raycast_down.get_collider() != null and raycast_down.get_collider().get_name() == "PlataformaMovel"):
+				# Atualizando a posição do player à medida que a plataforma se move
+				current_speed = raycast_down.get_collider().velocity
+				set_applied_force(Vector2(0, 10000))
+				get_node("Moko/AnimationPlayer").stop(true)
+				anim = ""
+		
+		else:
 			get_node("Moko/AnimationPlayer").stop(true)
 			anim = ""
-	
-	else:
-		get_node("Moko/AnimationPlayer").stop(true)
-		anim = ""
-	
-	if (Input.is_key_pressed(KEY_SPACE) and is_on_ground()): 
-		set_axis_velocity(Vector2(0,-jumpforce))
-		set_applied_force(Vector2(0, extra_gravity))
 		
-	if animacao != anim:
-		get_node("Moko/AnimationPlayer").play(anim)
-		animacao = anim
-	
+		if (Input.is_key_pressed(KEY_SPACE) and is_on_ground()): 
+			set_axis_velocity(Vector2(0,-jumpforce))
+			set_applied_force(Vector2(0, extra_gravity))
+			
+		if animacao != anim:
+			get_node("Moko/AnimationPlayer").play(anim)
+			animacao = anim
+		
+		if vidas == 0:
+			get_node("Moko").queue_free()
+			get_node("/root/Node2D/GameOver/Panel").show()
+			get_node("/root/Node2D/GameOver/Label").show()
+
 
