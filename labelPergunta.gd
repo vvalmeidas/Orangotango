@@ -4,8 +4,6 @@ extends Label
 # var a = 2
 # var b = "textvar"
 
-
-var pergunta1 = "Pq Britney é a rainha do POP?";
 export var respAtual = 0;
 export var indiceAtual = 0;
 export var perguntas = [];
