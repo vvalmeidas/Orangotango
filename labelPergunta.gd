@@ -15,10 +15,15 @@ var respostas = [];
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	perguntas.append("2 x 2")
-	respostas.append(4)
-	perguntas.append("6 x 3")
-	respostas.append(18)
+	perguntas.append("1 + 0")
+	respostas.append(1)
+	perguntas.append("5 + 5")
+	respostas.append(10)
+	#perguntas.append("4 + 8")
+	#respostas.append(12)
+	#perguntas.append("2 + 2 + 3")
+	#respostas.append(7)
+	
 	perguntaAtual = perguntas[0]
 	respAtual = respostas[0]
 	self.set_text(perguntaAtual)
