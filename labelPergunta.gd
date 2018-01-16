@@ -17,10 +17,14 @@ func _ready():
 	respostas.append(1)
 	perguntas.append("5 + 5")
 	respostas.append(10)
-	#perguntas.append("4 + 8")
-	#respostas.append(12)
-	#perguntas.append("2 + 2 + 3")
-	#respostas.append(7)
+	perguntas.append("4 + 8")
+	respostas.append(12)
+	perguntas.append("6 - 2")
+	respostas.append(4)
+	perguntas.append("2 + 2 + 3")
+	respostas.append(7)
+	perguntas.append("9 - 3")
+	respostas.append(6)
 	
 	perguntaAtual = perguntas[0]
 	respAtual = respostas[0]
