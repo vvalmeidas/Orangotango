@@ -15,7 +15,7 @@ func _ready():
 	# Initialization here
 	perguntas.append("1 + 0")
 	respostas.append(1)
-	perguntas.append("5 + 5")
+	perguntas.append("6 + 4")
 	respostas.append(10)
 	perguntas.append("4 + 8")
 	respostas.append(12)
