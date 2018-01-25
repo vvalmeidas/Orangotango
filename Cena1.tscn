@@ -240,10 +240,12 @@ stream/buffering_ms = 500
 
 [node name="SamplePlayer2D" type="SamplePlayer2D" parent="."]
 
+transform/pos = Vector2( 1706.2, 9.703 )
+transform/scale = Vector2( 1, 1.04053 )
 params/volume_db = 0.0
 params/pitch_scale = 1.0
 params/attenuation/min_distance = 1.0
-params/attenuation/max_distance = 2048.0
+params/attenuation/max_distance = 4000.0
 params/attenuation/distance_exp = 1.0
 config/polyphony = 1
 config/samples = SubResource( 1 )

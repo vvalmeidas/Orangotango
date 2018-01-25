@@ -24,6 +24,7 @@ margin/top = 226.0
 margin/right = 1002.0
 margin/bottom = 314.0
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
