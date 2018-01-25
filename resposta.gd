@@ -18,8 +18,8 @@ func _fixed_process(delta):
 	move(Vector2(0,0))
 	
 	if(is_colliding() && resp == pergunta.get("respAtual") && get_node("Label") != null && get_node("CollisionShape2D") != null):
-		moko.set("pontos", moko.get("pontos") + 10)
 		sons.play("Acertou2")
+		moko.set("pontos", moko.get("pontos") + 10)
 		get_node("Label").queue_free()
 		get_node("CollisionShape2D").queue_free()
 		get_node("/root/Node2D/PlataformaMovel/Plataforma 1").show()
