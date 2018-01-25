@@ -57,6 +57,7 @@ func _fixed_process(delta):
 		if (Input.is_key_pressed(KEY_SPACE) and is_on_ground()): 
 			set_axis_velocity(Vector2(0,-jumpforce))
 			set_applied_force(Vector2(0, extra_gravity))
+			get_node("/root/Node2D/SamplePlayer2D").play("Jump")
 			
 		if animacao != anim:
 			get_node("Moko/AnimationPlayer").play(anim)

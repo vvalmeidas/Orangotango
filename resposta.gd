@@ -5,6 +5,7 @@ onready var spriteVidas = get_node("/root/Node2D/HUD/SpriteVidas");
 onready var moko = get_node("/root/Node2D/RigidBodyMoko");
 onready var pergunta = get_node("/root/Node2D/Pergunta/LabelPergunta");
 onready var timer = get_node("Timer");
+onready var sons = get_node("/root/Node2D/SamplePlayer2D");
 var curPos = self.get_pos();
 
 func _ready():
@@ -18,6 +19,7 @@ func _fixed_process(delta):
 	
 	if(is_colliding() && resp == pergunta.get("respAtual") && get_node("Label") != null && get_node("CollisionShape2D") != null):
 		moko.set("pontos", moko.get("pontos") + 10)
+		sons.play("Acertou2")
 		get_node("Label").queue_free()
 		get_node("CollisionShape2D").queue_free()
 		get_node("/root/Node2D/PlataformaMovel/Plataforma 1").show()
@@ -34,6 +36,7 @@ func _fixed_process(delta):
 		get_node("Label").set("custom_colors/font_color", Color(1,0,0))
 		self.set_pos(curPos)
 		moko.set("vidas", moko.get("vidas") - 1)
+		sons.play("Errou")
 		spriteVidas.set_frame(moko.get("vidas"))
 		timer.connect("timeout", self, "_on_timer_timeout")
 		timer.set_wait_time(1)
