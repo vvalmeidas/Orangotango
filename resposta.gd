@@ -22,8 +22,9 @@ func _fixed_process(delta):
 		moko.set("pontos", moko.get("pontos") + 10)
 		get_node("Label").queue_free()
 		get_node("CollisionShape2D").queue_free()
-		get_node("/root/Node2D/PlataformaMovel/Plataforma 1").show()
-		get_node("/root/Node2D/PlataformaMovel/CollisionPolygon2D").show()
+		if(pergunta.get("indiceAtual") == 1):
+			get_node("/root/Node2D/PlataformaMovel/Plataforma 1").show()
+			get_node("/root/Node2D/PlataformaMovel/CollisionPolygon2D").show()
 		if(pergunta.get("perguntas").size() - 1 >= pergunta.get("indiceAtual") + 1): 
 			pergunta.set("indiceAtual", pergunta.get("indiceAtual") + 1)
 		else: 

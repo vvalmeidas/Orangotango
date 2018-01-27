@@ -25,6 +25,15 @@ func _ready():
 	respostas.append(7)
 	perguntas.append("9 - 3")
 	respostas.append(6)
+	perguntas.append("8 - 2 - 1")
+	respostas.append(5)
+	perguntas.append("21 - 9")
+	respostas.append(12)
+	perguntas.append("35 + 24")
+	respostas.append(59)
+	perguntas.append("10 + 19 + 5")
+	respostas.append(34)
+	
 	
 	perguntaAtual = perguntas[0]
 	respAtual = respostas[0]

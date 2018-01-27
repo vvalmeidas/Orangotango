@@ -1,9 +1,9 @@
-[gd_scene load_steps=54 format=1]
+[gd_scene load_steps=58 format=1]
 
 [ext_resource path="res://FundoMusical.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Acertou2.smp" type="Sample" id=2]
-[ext_resource path="res://Errou.smp" type="Sample" id=3]
-[ext_resource path="res://Hit_Hurt10.smp" type="Sample" id=4]
+[ext_resource path="res://Colisao_Cobra.smp" type="Sample" id=3]
+[ext_resource path="res://Errou.smp" type="Sample" id=4]
 [ext_resource path="res://Jump.smp" type="Sample" id=5]
 [ext_resource path="res://PegaBanana.smp" type="Sample" id=6]
 [ext_resource path="res://CoqueiroLighter.tex" type="Texture" id=7]
@@ -33,13 +33,13 @@ samples/Acertou2 = {
 "priority": 0,
 "sample": ExtResource( 2 )
 }
-samples/Errou = {
+samples/Colisao_Cobra = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 3 )
 }
-samples/Hit_Hurt10 = {
+samples/Errou = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
@@ -84,6 +84,26 @@ custom_solver_bias = 0.0
 points = Vector2Array( 55, -1, 57, 46, -95, 46, -93, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+
+[sub_resource type="ConvexPolygonShape2D" id=30]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+
+[sub_resource type="ConvexPolygonShape2D" id=32]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+
+[sub_resource type="ConvexPolygonShape2D" id=33]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
@@ -427,6 +447,106 @@ polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 
 shape_range = Vector2( 0, 0 )
 trigger = false
 
+[node name="Plataforma9" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 3269.2, -239.297 )
+input/pickable = false
+shapes/0/shape = SubResource( 30 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2371.47, 105.118 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Plataforma 1" type="Sprite" parent="Plataforma9"]
+
+transform/pos = Vector2( 2371.65, 121.241 )
+transform/scale = Vector2( 5.82265, 4.50812 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma9"]
+
+transform/pos = Vector2( 2371.47, 105.118 )
+build_mode = 0
+polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Plataforma10" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 3374.32, -264.525 )
+input/pickable = false
+shapes/0/shape = SubResource( 31 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2623.76, -8.40948 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Plataforma 1" type="Sprite" parent="Plataforma10"]
+
+transform/pos = Vector2( 2623.93, 7.7135 )
+transform/scale = Vector2( 5.82265, 4.50812 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma10"]
+
+transform/pos = Vector2( 2623.76, -8.40948 )
+build_mode = 0
+polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Plataforma11" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 3374.32, -264.525 )
+input/pickable = false
+shapes/0/shape = SubResource( 32 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2976.95, 96.7089 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Plataforma 1" type="Sprite" parent="Plataforma11"]
+
+transform/pos = Vector2( 2977.13, 112.832 )
+transform/scale = Vector2( 5.82265, 4.50812 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma11"]
+
+transform/pos = Vector2( 2976.95, 96.7089 )
+build_mode = 0
+polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Plataforma12" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 3374.32, -264.525 )
+input/pickable = false
+shapes/0/shape = SubResource( 33 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 3258.67, -25.2285 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Plataforma 1" type="Sprite" parent="Plataforma12"]
+
+transform/pos = Vector2( 3258.84, -9.10548 )
+transform/scale = Vector2( 5.82265, 4.50812 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma12"]
+
+transform/pos = Vector2( 3258.67, -25.2285 )
+build_mode = 0
+polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
 [node name="PlataformaMovel" type="KinematicBody2D" parent="."]
 
 editor/display_folded = true
@@ -743,8 +863,6 @@ frame = 3
 
 [node name="Respostas" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="Resposta" type="KinematicBody2D" parent="Respostas"]
 
 editor/display_folded = true
@@ -793,6 +911,7 @@ autostart = false
 
 [node name="Resposta2" type="KinematicBody2D" parent="Respostas"]
 
+editor/display_folded = true
 transform/pos = Vector2( 3926.2, -291.297 )
 input/pickable = false
 shapes/0/shape = SubResource( 21 )
@@ -838,6 +957,7 @@ autostart = false
 
 [node name="Resposta3" type="KinematicBody2D" parent="Respostas"]
 
+editor/display_folded = true
 transform/pos = Vector2( 2888.2, -258.297 )
 input/pickable = false
 shapes/0/shape = SubResource( 21 )
@@ -883,6 +1003,7 @@ autostart = false
 
 [node name="Resposta4" type="KinematicBody2D" parent="Respostas"]
 
+editor/display_folded = true
 transform/pos = Vector2( 3273.2, -271.297 )
 input/pickable = false
 shapes/0/shape = SubResource( 21 )
@@ -928,6 +1049,7 @@ autostart = false
 
 [node name="Resposta5" type="KinematicBody2D" parent="Respostas"]
 
+editor/display_folded = true
 transform/pos = Vector2( 3616.2, -166.297 )
 input/pickable = false
 shapes/0/shape = SubResource( 21 )
@@ -1014,6 +1136,186 @@ _update_shape_index = 0
 
 process_mode = 1
 wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Resposta6" type="KinematicBody2D" parent="Respostas"]
+
+transform/pos = Vector2( 3926.2, -291.297 )
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 1740.59, 111.395 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.09
+script/script = ExtResource( 19 )
+
+[node name="Label" type="Label" parent="Respostas/Resposta6"]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 1706.0
+margin/top = 69.0
+margin/right = 1774.0
+margin/bottom = 183.0
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "59"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Respostas/Resposta6"]
+
+transform/pos = Vector2( 1740.59, 111.395 )
+transform/scale = Vector2( 2.11709, 2.94908 )
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Timer" type="Timer" parent="Respostas/Resposta6"]
+
+process_mode = 1
+wait_time = 1.03
+one_shot = false
+autostart = false
+
+[node name="Resposta7" type="KinematicBody2D" parent="Respostas"]
+
+transform/pos = Vector2( 3926.2, -291.297 )
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2076.97, -27.3617 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.09
+script/script = ExtResource( 19 )
+
+[node name="Label" type="Label" parent="Respostas/Resposta7"]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 2059.0
+margin/top = -70.0
+margin/right = 2127.0
+margin/bottom = 44.0
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Respostas/Resposta7"]
+
+transform/pos = Vector2( 2076.97, -27.3617 )
+transform/scale = Vector2( 2.11709, 2.94908 )
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Timer" type="Timer" parent="Respostas/Resposta7"]
+
+process_mode = 1
+wait_time = 1.03
+one_shot = false
+autostart = false
+
+[node name="Resposta8" type="KinematicBody2D" parent="Respostas"]
+
+transform/pos = Vector2( 3926.2, -291.297 )
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2434.37, 81.9614 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.09
+script/script = ExtResource( 19 )
+
+[node name="Label" type="Label" parent="Respostas/Resposta8"]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 2404.0
+margin/top = 40.0
+margin/right = 2485.0
+margin/bottom = 154.0
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "34"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Respostas/Resposta8"]
+
+transform/pos = Vector2( 2434.37, 81.9614 )
+transform/scale = Vector2( 2.11709, 2.94908 )
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Timer" type="Timer" parent="Respostas/Resposta8"]
+
+process_mode = 1
+wait_time = 1.03
+one_shot = false
+autostart = false
+
+[node name="Resposta9" type="KinematicBody2D" parent="Respostas"]
+
+transform/pos = Vector2( 3917.79, -270.273 )
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2732.91, -56.7949 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.09
+script/script = ExtResource( 19 )
+
+[node name="Label" type="Label" parent="Respostas/Resposta9"]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 2706.0
+margin/top = -99.0
+margin/right = 2774.0
+margin/bottom = 15.0
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Respostas/Resposta9"]
+
+transform/pos = Vector2( 2732.91, -56.7949 )
+transform/scale = Vector2( 2.11709, 2.94908 )
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Timer" type="Timer" parent="Respostas/Resposta9"]
+
+process_mode = 1
+wait_time = 1.03
 one_shot = false
 autostart = false
 
@@ -1125,6 +1427,42 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fio2"]
+
+transform/pos = Vector2( 962.995, -40 )
+transform/scale = Vector2( 4.09867, 0.609375 )
+shape = SubResource( 23 )
+trigger = false
+_update_shape_index = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Fio3" type="StaticBody2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 5240.26, 50.2937 )
+input/pickable = false
+shapes/0/shape = SubResource( 23 )
+shapes/0/transform = Matrix32( 4.09867, 0, 0, 0.609375, 962.995, -40 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="Fio3"]
+
+transform/pos = Vector2( 824.245, -63 )
+transform/scale = Vector2( 39.7422, 3 )
+texture = ExtResource( 21 )
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fio3"]
 
 transform/pos = Vector2( 962.995, -40 )
 transform/scale = Vector2( 4.09867, 0.609375 )
