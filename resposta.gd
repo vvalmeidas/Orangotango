@@ -25,6 +25,9 @@ func _fixed_process(delta):
 		if(pergunta.get("indiceAtual") == 1):
 			get_node("/root/Node2D/PlataformaMovel/Plataforma 1").show()
 			get_node("/root/Node2D/PlataformaMovel/CollisionPolygon2D").show()
+		if(pergunta.get("indiceAtual") == 5):
+			get_node("/root/Node2D/PlataformaMovel 2/Sprite").show()
+			get_node("/root/Node2D/PlataformaMovel 2/CollisionPolygon2D").show()
 		if(pergunta.get("perguntas").size() - 1 >= pergunta.get("indiceAtual") + 1): 
 			pergunta.set("indiceAtual", pergunta.get("indiceAtual") + 1)
 		else: 

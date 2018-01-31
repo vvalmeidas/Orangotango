@@ -11,6 +11,7 @@ var raycast_down = null
 var anim = "";
 var animacao = "";
 export var pontos = 0;
+onready var sons = get_node("/root/Node2D/SamplePlayer2D");
 
 func _ready():
 	raycast_down = get_node("RayCast2D")
@@ -68,7 +69,10 @@ func _fixed_process(delta):
 			get_node("/root/Node2D/GameOver/Panel").show()
 			get_node("/root/Node2D/GameOver/Label").show()
 		
-		print(raycast_down.is_colliding())
-		
 		if(raycast_down.is_colliding() and raycast_down.get_collider() != null and raycast_down.get_collider().get_name() == "KinematicBodyFall"):
-			print("caiu");
+			get_node("/root/Node2D/RigidBodyMoko").set("vidas", get_node("/root/Node2D/RigidBodyMoko").get("vidas") - 1)
+			get_node("/root/Node2D/HUD/SpriteVidas").set_frame(get_node("/root/Node2D/RigidBodyMoko").get("vidas"))
+			get_node("/root/Node2D/RigidBodyMoko").set_global_pos(Vector2(0, 0)) 
+			if(vidas > 0):
+				sons.play("caiu")
+			
