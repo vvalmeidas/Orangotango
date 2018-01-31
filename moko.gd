@@ -67,5 +67,8 @@ func _fixed_process(delta):
 			get_node("Moko").queue_free()
 			get_node("/root/Node2D/GameOver/Panel").show()
 			get_node("/root/Node2D/GameOver/Label").show()
-
-
+		
+		print(raycast_down.is_colliding())
+		
+		if(raycast_down.is_colliding() and raycast_down.get_collider() != null and raycast_down.get_collider().get_name() == "KinematicBodyFall"):
+			print("caiu");
