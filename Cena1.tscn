@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=1]
+[gd_scene load_steps=69 format=1]
 
 [ext_resource path="res://FundoMusical.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Acertou2.smp" type="Sample" id=2]
@@ -7,24 +7,26 @@
 [ext_resource path="res://Jump.smp" type="Sample" id=5]
 [ext_resource path="res://PegaBanana.smp" type="Sample" id=6]
 [ext_resource path="res://caiu.wav" type="Sample" id=7]
-[ext_resource path="res://CoqueiroLighter.tex" type="Texture" id=8]
-[ext_resource path="res://Plataforma psd 64 copy.tex" type="Texture" id=9]
-[ext_resource path="res://plataformaMovel.gd" type="Script" id=10]
-[ext_resource path="res://plataforma_movel.tex" type="Texture" id=11]
-[ext_resource path="res://banana.gd" type="Script" id=12]
-[ext_resource path="res://banana.tex" type="Texture" id=13]
-[ext_resource path="res://moko.gd" type="Script" id=14]
-[ext_resource path="res://spritestriptest.tex" type="Texture" id=15]
-[ext_resource path="res://American Captain.fnt" type="BitmapFont" id=16]
-[ext_resource path="res://labelPergunta.gd" type="Script" id=17]
-[ext_resource path="res://labelPontos.gd" type="Script" id=18]
-[ext_resource path="res://SpriteStripVidas.tex" type="Texture" id=19]
-[ext_resource path="res://resposta.gd" type="Script" id=20]
-[ext_resource path="res://bgTeste.tex" type="Texture" id=21]
-[ext_resource path="res://fio.tex" type="Texture" id=22]
-[ext_resource path="res://cobra.gd" type="Script" id=23]
-[ext_resource path="res://stripcobra.tex" type="Texture" id=24]
-[ext_resource path="res://cobraAnimacao.tres" type="Animation" id=25]
+[ext_resource path="res://lose.wav" type="Sample" id=8]
+[ext_resource path="res://win.wav" type="Sample" id=9]
+[ext_resource path="res://CoqueiroLighter.tex" type="Texture" id=10]
+[ext_resource path="res://Plataforma psd 64 copy.tex" type="Texture" id=11]
+[ext_resource path="res://plataformaMovel.gd" type="Script" id=12]
+[ext_resource path="res://plataforma_movel.tex" type="Texture" id=13]
+[ext_resource path="res://banana.gd" type="Script" id=14]
+[ext_resource path="res://banana.tex" type="Texture" id=15]
+[ext_resource path="res://moko.gd" type="Script" id=16]
+[ext_resource path="res://spritestriptest.tex" type="Texture" id=17]
+[ext_resource path="res://American Captain.fnt" type="BitmapFont" id=18]
+[ext_resource path="res://labelPergunta.gd" type="Script" id=19]
+[ext_resource path="res://labelPontos.gd" type="Script" id=20]
+[ext_resource path="res://SpriteStripVidas.tex" type="Texture" id=21]
+[ext_resource path="res://resposta.gd" type="Script" id=22]
+[ext_resource path="res://bgTeste.tex" type="Texture" id=23]
+[ext_resource path="res://fio.tex" type="Texture" id=24]
+[ext_resource path="res://cobra.gd" type="Script" id=25]
+[ext_resource path="res://stripcobra.tex" type="Texture" id=26]
+[ext_resource path="res://cobraAnimacao.tres" type="Animation" id=27]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -64,6 +66,18 @@ samples/caiu = {
 "priority": 0,
 "sample": ExtResource( 7 )
 }
+samples/lose = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+samples/win = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
@@ -95,22 +109,22 @@ points = Vector2Array( 55, -1, 57, 46, -95, 46, -93, 0 )
 custom_solver_bias = 0.0
 points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
 
-[sub_resource type="ConvexPolygonShape2D" id=38]
+[sub_resource type="ConvexPolygonShape2D" id=49]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
 
-[sub_resource type="ConvexPolygonShape2D" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=50]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
 
-[sub_resource type="ConvexPolygonShape2D" id=63]
+[sub_resource type="ConvexPolygonShape2D" id=48]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
 
-[sub_resource type="ConvexPolygonShape2D" id=62]
+[sub_resource type="ConvexPolygonShape2D" id=51]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
@@ -227,69 +241,73 @@ extents = Vector2( 631, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 276.481, 13 )
 
-[sub_resource type="ConvexPolygonShape2D" id=51]
+[sub_resource type="ConvexPolygonShape2D" id=28]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 23, 0, 22.5967, -38.2211, 39.5967, -30.2211, 44, 7 )
 
-[sub_resource type="ConvexPolygonShape2D" id=52]
+[sub_resource type="ConvexPolygonShape2D" id=29]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 44, 7, 42.5967, -30.2211, 64.5967, -28.2211, 64.5967, 39.7789 )
 
-[sub_resource type="ConvexPolygonShape2D" id=53]
+[sub_resource type="ConvexPolygonShape2D" id=30]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 23, 0, 44, 7, 64.5967, 39.7789, -21.4033, 37.7789, -25.4033, 22.7789, -28.4033, -9.22113 )
 
-[sub_resource type="ConvexPolygonShape2D" id=54]
+[sub_resource type="ConvexPolygonShape2D" id=31]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -19, -28, -4, -37, 6.59668, -39.2211, 21.5967, -37.2211, 23, 0, -28.4033, -9.22113, -28.4033, -16.2211 )
 
-[sub_resource type="ConvexPolygonShape2D" id=55]
+[sub_resource type="ConvexPolygonShape2D" id=32]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -26.4033, -24.2211, -19, -28, -28.4033, -16.2211 )
 
-[sub_resource type="ConvexPolygonShape2D" id=56]
+[sub_resource type="ConvexPolygonShape2D" id=42]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 23, 0, 22.5967, -38.2211, 39.5967, -30.2211, 44, 7 )
 
-[sub_resource type="ConvexPolygonShape2D" id=57]
+[sub_resource type="ConvexPolygonShape2D" id=43]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 44, 7, 42.5967, -30.2211, 64.5967, -28.2211, 64.5967, 39.7789 )
 
-[sub_resource type="ConvexPolygonShape2D" id=58]
+[sub_resource type="ConvexPolygonShape2D" id=44]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 23, 0, 44, 7, 64.5967, 39.7789, -21.4033, 37.7789, -25.4033, 22.7789, -28.4033, -9.22113 )
 
-[sub_resource type="ConvexPolygonShape2D" id=59]
+[sub_resource type="ConvexPolygonShape2D" id=45]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -19, -28, -4, -37, 6.59668, -39.2211, 21.5967, -37.2211, 23, 0, -28.4033, -9.22113, -28.4033, -16.2211 )
 
-[sub_resource type="ConvexPolygonShape2D" id=60]
+[sub_resource type="ConvexPolygonShape2D" id=46]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -26.4033, -24.2211, -19, -28, -28.4033, -16.2211 )
 
-[sub_resource type="ConvexPolygonShape2D" id=50]
+[sub_resource type="ConvexPolygonShape2D" id=38]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 7761.76, 195.553, 7761.76, 234.606, 997.645, 291.814, 997.645, 255.551 )
 
-[sub_resource type="ConvexPolygonShape2D" id=37]
+[sub_resource type="ConvexPolygonShape2D" id=47]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 6907.61, 223.066, 6786.18, 227.369, 6789.97, 191.068, 6907.61, 187.273 )
+
+[sub_resource type="ConvexPolygonShape2D" id=40]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -26.0957, -13.5971, 51.231, -13.9818, 52.4829, 6.40941, 37.769, 16.7974, -36.7397, 16.7974, -38.3049, -1.28539 )
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=41]
 
-resource/name = "Anim"
 length = 2.0
 loop = true
 step = 0.1
@@ -386,7 +404,7 @@ config/pitch_random = 0.0
 
 transform/pos = Vector2( -10.805, -25.297 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -395,7 +413,7 @@ __meta__ = {
 
 transform/pos = Vector2( 4235.19, -19.297 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -416,7 +434,7 @@ collision/margin = 0.08
 
 transform/pos = Vector2( 0.173126, 16.123 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma1"]
 
@@ -441,7 +459,7 @@ collision/margin = 0.08
 
 transform/pos = Vector2( 0.173096, 17.7932 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma2"]
 
@@ -466,7 +484,7 @@ collision/margin = 0.08
 
 transform/pos = Vector2( 0.173126, 16.123 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma4"]
 
@@ -491,7 +509,7 @@ collision/margin = 0.08
 
 transform/pos = Vector2( 0.173126, 16.123 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma7"]
 
@@ -516,7 +534,7 @@ collision/margin = 0.08
 
 transform/pos = Vector2( 0.173126, 16.123 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma8"]
 
@@ -542,7 +560,7 @@ collision/margin = 0.08
 
 transform/pos = Vector2( 0.173126, 16.123 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma6"]
 
@@ -556,8 +574,8 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 3269.2, -239.297 )
 input/pickable = false
-shapes/0/shape = SubResource( 38 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 2374.56, 55.6641 )
+shapes/0/shape = SubResource( 49 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2444.44, 88.2771 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -565,13 +583,13 @@ collision/margin = 0.08
 
 [node name="Plataforma 1" type="Sprite" parent="Plataforma9"]
 
-transform/pos = Vector2( 2374.74, 71.7871 )
+transform/pos = Vector2( 2444.62, 104.4 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma9"]
 
-transform/pos = Vector2( 2374.56, 55.6641 )
+transform/pos = Vector2( 2444.44, 88.2771 )
 build_mode = 0
 polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
 shape_range = Vector2( 0, 0 )
@@ -582,8 +600,8 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 3374.32, -264.525 )
 input/pickable = false
-shapes/0/shape = SubResource( 9 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 2623.76, -8.40948 )
+shapes/0/shape = SubResource( 50 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2684.33, 33.5214 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -591,13 +609,13 @@ collision/margin = 0.08
 
 [node name="Plataforma 1" type="Sprite" parent="Plataforma10"]
 
-transform/pos = Vector2( 2623.93, 7.7135 )
+transform/pos = Vector2( 2684.5, 49.6444 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma10"]
 
-transform/pos = Vector2( 2623.76, -8.40948 )
+transform/pos = Vector2( 2684.33, 33.5214 )
 build_mode = 0
 polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
 shape_range = Vector2( 0, 0 )
@@ -605,10 +623,11 @@ trigger = false
 
 [node name="Plataforma11" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 3374.32, -264.525 )
 input/pickable = false
-shapes/0/shape = SubResource( 63 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 3045.26, 138.451 )
+shapes/0/shape = SubResource( 48 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 3059.41, 115.871 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -616,13 +635,13 @@ collision/margin = 0.08
 
 [node name="Plataforma 1" type="Sprite" parent="Plataforma11"]
 
-transform/pos = Vector2( 3045.44, 154.574 )
+transform/pos = Vector2( 3059.59, 135.788 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma11"]
 
-transform/pos = Vector2( 3045.26, 138.451 )
+transform/pos = Vector2( 3059.41, 115.871 )
 build_mode = 0
 polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
 shape_range = Vector2( 0, 0 )
@@ -630,10 +649,11 @@ trigger = false
 
 [node name="Plataforma12" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 3374.32, -264.525 )
 input/pickable = false
-shapes/0/shape = SubResource( 62 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 3524.3, -10.0494 )
+shapes/0/shape = SubResource( 51 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 3384.53, 17.9045 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -641,13 +661,13 @@ collision/margin = 0.08
 
 [node name="Plataforma 1" type="Sprite" parent="Plataforma12"]
 
-transform/pos = Vector2( 3524.48, 6.0736 )
+transform/pos = Vector2( 3384.71, 34.0275 )
 transform/scale = Vector2( 5.82265, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma12"]
 
-transform/pos = Vector2( 3524.3, -10.0494 )
+transform/pos = Vector2( 3384.53, 17.9045 )
 build_mode = 0
 polygon = Vector2Array( -97.1284, 3.2811, -83.962, -2.35461, 75.8605, -2.12965, 93.2649, -0.966003, 92.7858, 18.008, 63.2091, 45.0356, -95.4582, 46.7058 )
 shape_range = Vector2( 0, 0 )
@@ -664,7 +684,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.01
-script/script = ExtResource( 10 )
+script/script = ExtResource( 12 )
 velocity = Vector2( 0, 0 )
 
 [node name="Plataforma 1" type="Sprite" parent="PlataformaMovel"]
@@ -672,7 +692,7 @@ velocity = Vector2( 0, 0 )
 visibility/visible = false
 transform/pos = Vector2( 0.173096, 15.123 )
 transform/scale = Vector2( 4, 3 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlataformaMovel"]
 
@@ -713,7 +733,7 @@ collision/margin = 0.08
 
 transform/pos = Vector2( -1.57328, 11.4354 )
 transform/scale = Vector2( 5.85719, 4.50812 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma3"]
 
@@ -741,13 +761,13 @@ shapes/2/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 12 )
+script/script = ExtResource( 14 )
 
 [node name="SpriteBanana" type="Sprite" parent="KinematicBodyBanana"]
 
 transform/pos = Vector2( 379.56, 39.952 )
 transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 
 [node name="CollisionBanana" type="CollisionPolygon2D" parent="KinematicBodyBanana"]
 
@@ -773,13 +793,13 @@ shapes/2/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 12 )
+script/script = ExtResource( 14 )
 
 [node name="SpriteBanana" type="Sprite" parent="KinematicBodyBanana1"]
 
 transform/pos = Vector2( 379.56, 37.952 )
 transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 
 [node name="CollisionBanana" type="CollisionPolygon2D" parent="KinematicBodyBanana1"]
 
@@ -816,7 +836,7 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 14 )
+script/script = ExtResource( 16 )
 player_speed = 400
 acceleration = 10
 extra_gravity = 550
@@ -829,7 +849,7 @@ pontos = 0
 editor/display_folded = true
 transform/pos = Vector2( -22.178, -58.5501 )
 transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RigidBodyMoko/Moko"]
@@ -902,15 +922,15 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 446.0
 margin/top = 502.0
-margin/right = 582.0
+margin/right = 593.0
 margin/bottom = 616.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0.0542219, 0.0546875, 0.0527649, 1 )
 text = "1 + 0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = ExtResource( 17 )
+script/script = ExtResource( 19 )
 respAtual = 0
 indiceAtual = 0
 perguntas = [  ]
@@ -934,13 +954,13 @@ margin/left = 444.0
 margin/top = 30.0
 margin/right = 752.0
 margin/bottom = 147.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0.334091, 0.553879, 0.589844, 1 )
 text = "Pontos: "
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = ExtResource( 18 )
+script/script = ExtResource( 20 )
 
 [node name="LabelVidas" type="Label" parent="HUD"]
 
@@ -953,7 +973,7 @@ margin/left = 105.0
 margin/top = 30.0
 margin/right = 293.0
 margin/bottom = 144.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0.333333, 0.552941, 0.588235, 1 )
 text = "Vidas: "
 percent_visible = 1.0
@@ -963,11 +983,13 @@ max_lines_visible = -1
 [node name="SpriteVidas" type="Sprite" parent="HUD"]
 
 transform/pos = Vector2( 266.489, 60.0704 )
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 hframes = 4
 frame = 3
 
 [node name="Respostas" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="Resposta" type="KinematicBody2D" parent="Respostas"]
 
@@ -980,7 +1002,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta"]
 
@@ -993,7 +1015,7 @@ margin/left = -22.0
 margin/top = -49.0
 margin/right = 46.0
 margin/bottom = 65.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 percent_visible = 1.0
@@ -1026,7 +1048,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.09
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta2"]
 
@@ -1039,7 +1061,7 @@ margin/left = -22.0
 margin/top = -49.0
 margin/right = 46.0
 margin/bottom = 65.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "7"
 percent_visible = 1.0
@@ -1072,7 +1094,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta3"]
 
@@ -1085,7 +1107,7 @@ margin/left = -22.0
 margin/top = -49.0
 margin/right = 46.0
 margin/bottom = 65.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "6"
 percent_visible = 1.0
@@ -1118,7 +1140,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta4"]
 
@@ -1131,7 +1153,7 @@ margin/left = -22.0
 margin/top = -49.0
 margin/right = 46.0
 margin/bottom = 65.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "4"
 percent_visible = 1.0
@@ -1164,7 +1186,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta5"]
 
@@ -1177,7 +1199,7 @@ margin/left = -22.0
 margin/top = -49.0
 margin/right = 46.0
 margin/bottom = 65.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12"
 percent_visible = 1.0
@@ -1210,7 +1232,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta1"]
 
@@ -1223,7 +1245,7 @@ margin/left = -22.0
 margin/top = -49.0
 margin/right = 46.0
 margin/bottom = 65.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10"
 percent_visible = 1.0
@@ -1247,15 +1269,16 @@ autostart = false
 
 [node name="Resposta6" type="KinematicBody2D" parent="Respostas"]
 
+editor/display_folded = true
 transform/pos = Vector2( 3926.2, -291.297 )
 input/pickable = false
 shapes/0/shape = SubResource( 25 )
-shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 1722.05, 65.032 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 1791.94, 102.304 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.09
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta6"]
 
@@ -1264,11 +1287,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 1687.0
-margin/top = 22.0
-margin/right = 1768.0
-margin/bottom = 136.0
-custom_fonts/font = ExtResource( 16 )
+margin/left = 1757.0
+margin/top = 59.0
+margin/right = 1838.0
+margin/bottom = 173.0
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "59"
 percent_visible = 1.0
@@ -1277,7 +1300,7 @@ max_lines_visible = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Respostas/Resposta6"]
 
-transform/pos = Vector2( 1722.05, 65.032 )
+transform/pos = Vector2( 1791.94, 102.304 )
 transform/scale = Vector2( 2.11709, 2.94908 )
 shape = SubResource( 25 )
 trigger = false
@@ -1295,12 +1318,12 @@ autostart = false
 transform/pos = Vector2( 3926.2, -291.297 )
 input/pickable = false
 shapes/0/shape = SubResource( 25 )
-shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2489.16, 124.956 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2490.03, 121.012 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.09
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta7"]
 
@@ -1309,11 +1332,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 2472.0
-margin/top = 82.0
-margin/right = 2540.0
-margin/bottom = 196.0
-custom_fonts/font = ExtResource( 16 )
+margin/left = 2482.0
+margin/top = 73.0
+margin/right = 2550.0
+margin/bottom = 187.0
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5"
 percent_visible = 1.0
@@ -1322,7 +1345,7 @@ max_lines_visible = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Respostas/Resposta7"]
 
-transform/pos = Vector2( 2489.16, 124.956 )
+transform/pos = Vector2( 2490.03, 121.012 )
 transform/scale = Vector2( 2.11709, 2.94908 )
 shape = SubResource( 25 )
 trigger = false
@@ -1340,12 +1363,12 @@ autostart = false
 transform/pos = Vector2( 3926.2, -291.297 )
 input/pickable = false
 shapes/0/shape = SubResource( 25 )
-shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2066.16, -18.4609 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2131.39, 23.47 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.09
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta8"]
 
@@ -1354,11 +1377,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 2036.0
-margin/top = -60.0
-margin/right = 2117.0
-margin/bottom = 54.0
-custom_fonts/font = ExtResource( 16 )
+margin/left = 2101.0
+margin/top = -18.0
+margin/right = 2182.0
+margin/bottom = 96.0
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "34"
 percent_visible = 1.0
@@ -1367,7 +1390,7 @@ max_lines_visible = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Respostas/Resposta8"]
 
-transform/pos = Vector2( 2066.16, -18.4609 )
+transform/pos = Vector2( 2131.39, 23.47 )
 transform/scale = Vector2( 2.11709, 2.94908 )
 shape = SubResource( 25 )
 trigger = false
@@ -1385,12 +1408,12 @@ autostart = false
 transform/pos = Vector2( 3917.79, -270.273 )
 input/pickable = false
 shapes/0/shape = SubResource( 25 )
-shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2978.4, -51.7229 )
+shapes/0/transform = Matrix32( 2.11709, 0, 0, 2.94908, 2833.97, -14.451 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.09
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="Respostas/Resposta9"]
 
@@ -1399,11 +1422,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 2952.0
-margin/top = -94.0
-margin/right = 3020.0
-margin/bottom = 20.0
-custom_fonts/font = ExtResource( 16 )
+margin/left = 2808.0
+margin/top = -57.0
+margin/right = 2876.0
+margin/bottom = 57.0
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12"
 percent_visible = 1.0
@@ -1412,7 +1435,7 @@ max_lines_visible = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Respostas/Resposta9"]
 
-transform/pos = Vector2( 2978.4, -51.7229 )
+transform/pos = Vector2( 2833.97, -14.451 )
 transform/scale = Vector2( 2.11709, 2.94908 )
 shape = SubResource( 25 )
 trigger = false
@@ -1459,7 +1482,7 @@ margin/left = 0.0
 margin/top = -3.0
 margin/right = 1200.0
 margin/bottom = 597.0
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 expand = true
 stretch_mode = 0
 __meta__ = {
@@ -1488,7 +1511,7 @@ __meta__ = {
 
 transform/pos = Vector2( 446.5, -60 )
 transform/scale = Vector2( 25.1094, 3 )
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1526,7 +1549,7 @@ __meta__ = {
 
 transform/pos = Vector2( 824.245, -63 )
 transform/scale = Vector2( 39.7422, 3 )
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 flip_h = true
 __meta__ = {
 "_edit_lock_": true
@@ -1562,7 +1585,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 824.245, -63 )
 transform/scale = Vector2( 39.7422, 3 )
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 flip_h = true
 __meta__ = {
 "_edit_lock_": true
@@ -1581,34 +1604,35 @@ __meta__ = {
 
 [node name="CobraBody" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 316.195, -50.297 )
 input/pickable = false
-shapes/0/shape = SubResource( 51 )
+shapes/0/shape = SubResource( 28 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 2125.34, 21.2047 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 52 )
+shapes/1/shape = SubResource( 29 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 2125.34, 21.2047 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 53 )
+shapes/2/shape = SubResource( 30 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, 2125.34, 21.2047 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 54 )
+shapes/3/shape = SubResource( 31 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 2125.34, 21.2047 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 55 )
+shapes/4/shape = SubResource( 32 )
 shapes/4/transform = Matrix32( 1, 0, 0, 1, 2125.34, 21.2047 )
 shapes/4/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 23 )
+script/script = ExtResource( 25 )
 
 [node name="Sprite" type="Sprite" parent="CobraBody"]
 
 editor/display_folded = true
 transform/pos = Vector2( 2149.34, -25.7953 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CobraBody/Sprite"]
@@ -1616,7 +1640,7 @@ hframes = 3
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-"anims/New Anim" = ExtResource( 25 )
+"anims/New Anim" = ExtResource( 27 )
 playback/active = true
 playback/speed = 0.6
 blend_times = [  ]
@@ -1625,7 +1649,6 @@ autoplay = "New Anim"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CobraBody"]
 
 transform/pos = Vector2( 2125.34, 21.2047 )
-transform/scale = Vector2( 1, 1 )
 build_mode = 0
 polygon = Vector2Array( -19, -28, -4, -37, 6.59668, -39.2211, 21.5967, -37.2211, 23, 0, 22.5967, -38.2211, 39.5967, -30.2211, 44, 7, 42.5967, -30.2211, 64.5967, -28.2211, 64.5967, 39.7789, -21.4033, 37.7789, -25.4033, 22.7789, -28.4033, -9.22113, -28.4033, -16.2211, -26.4033, -24.2211 )
 shape_range = Vector2( 0, 4 )
@@ -1633,34 +1656,35 @@ trigger = false
 
 [node name="CobraBody1" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 316.195, -50.297 )
 input/pickable = false
-shapes/0/shape = SubResource( 56 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 6330.08, 4.3858 )
+shapes/0/shape = SubResource( 42 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 5612.87, 11.9753 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 57 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 6330.08, 4.3858 )
+shapes/1/shape = SubResource( 43 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 5612.87, 11.9753 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 58 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 6330.08, 4.3858 )
+shapes/2/shape = SubResource( 44 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 5612.87, 11.9753 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 59 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 6330.08, 4.3858 )
+shapes/3/shape = SubResource( 45 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 5612.87, 11.9753 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 60 )
-shapes/4/transform = Matrix32( 1, 0, 0, 1, 6330.08, 4.3858 )
+shapes/4/shape = SubResource( 46 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 5612.87, 11.9753 )
 shapes/4/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 23 )
+script/script = ExtResource( 25 )
 
 [node name="Sprite" type="Sprite" parent="CobraBody1"]
 
 editor/display_folded = true
-transform/pos = Vector2( 6354.08, -42.6142 )
+transform/pos = Vector2( 5636.87, -35.0247 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CobraBody1/Sprite"]
@@ -1668,7 +1692,7 @@ hframes = 3
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-"anims/New Anim" = ExtResource( 25 )
+"anims/New Anim" = ExtResource( 27 )
 playback/active = true
 playback/speed = 0.6
 blend_times = [  ]
@@ -1676,7 +1700,7 @@ autoplay = "New Anim"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CobraBody1"]
 
-transform/pos = Vector2( 6330.08, 4.3858 )
+transform/pos = Vector2( 5612.87, 11.9753 )
 build_mode = 0
 polygon = Vector2Array( -19, -28, -4, -37, 6.59668, -39.2211, 21.5967, -37.2211, 23, 0, 22.5967, -38.2211, 39.5967, -30.2211, 44, 7, 42.5967, -30.2211, 64.5967, -28.2211, 64.5967, 39.7789, -21.4033, 37.7789, -25.4033, 22.7789, -28.4033, -9.22113, -28.4033, -16.2211, -26.4033, -24.2211 )
 shape_range = Vector2( 0, 4 )
@@ -1691,7 +1715,6 @@ scale = Vector2( 1, 1 )
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -1720,7 +1743,7 @@ margin/left = 352.0
 margin/top = 240.0
 margin/right = 708.0
 margin/bottom = 354.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0.965118, 0.961304, 0.976563, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "GAME OVER"
@@ -1728,11 +1751,69 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="FinalFase1" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Panel" type="Panel" parent="FinalFase1"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 247.0
+margin/top = 222.0
+margin/right = 696.0
+margin/bottom = 410.0
+
+[node name="Label" type="Label" parent="FinalFase1"]
+
+visibility/visible = false
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 369.0
+margin/top = 214.0
+margin/right = 569.0
+margin/bottom = 385.0
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.925781, 0.815794, 0.0976471, 1 )
+custom_colors/font_color_shadow = Color( 0.92549, 0.815686, 0.0941176, 1 )
+text = "FASE 1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="FinalFase1"]
+
+visibility/visible = false
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 270.0
+margin/top = 307.0
+margin/right = 673.0
+margin/bottom = 421.0
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.383842, 0.352264, 0.929688, 1 )
+custom_colors/font_color_shadow = Color( 0.380392, 0.34902, 0.929412, 1 )
+text = "FINALIZADA!!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="KinematicBodyFall" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 270.195, -214.297 )
 input/pickable = false
-shapes/0/shape = SubResource( 50 )
+shapes/0/shape = SubResource( 38 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -19.5266, 103.212 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1747,18 +1828,30 @@ polygon = Vector2Array( 997.645, 255.551, 997.645, 291.814, 7761.76, 234.606, 77
 shape_range = Vector2( 0, 0 )
 trigger = false
 
+[node name="KinematicBodyFinalFase1" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 270.195, -214.297 )
+input/pickable = false
+shapes/0/shape = SubResource( 47 )
+shapes/0/transform = Matrix32( 0.999999, 0, 0, 0.881944, 0.00683594, 20.8992 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
 [node name="PlataformaMovel 2" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 4758.2, -77.7178 )
 transform/scale = Vector2( 2.11913, 1.72434 )
 input/pickable = false
-shapes/0/shape = SubResource( 37 )
+shapes/0/shape = SubResource( 40 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 10 )
+script/script = ExtResource( 12 )
 velocity = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="PlataformaMovel 2"]
@@ -1766,7 +1859,7 @@ velocity = Vector2( 0, 0 )
 visibility/visible = false
 transform/pos = Vector2( 8.68359, 3.64714 )
 transform/scale = Vector2( 1.84324, 1.83712 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlataformaMovel 2"]
 
@@ -1781,7 +1874,7 @@ trigger = false
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Anim = SubResource( 35 )
+anims/Anim = SubResource( 41 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

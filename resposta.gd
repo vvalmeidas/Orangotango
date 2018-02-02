@@ -6,6 +6,7 @@ onready var moko = get_node("/root/Node2D/RigidBodyMoko");
 onready var pergunta = get_node("/root/Node2D/Pergunta/LabelPergunta");
 onready var timer = get_node("Timer");
 onready var sons = get_node("/root/Node2D/SamplePlayer2D");
+onready var somFundo = get_node("/root/Node2D/StreamPlayer");
 var curPos = self.get_pos();
 
 func _ready():
@@ -17,7 +18,7 @@ func _ready():
 func _fixed_process(delta):
 	move(Vector2(0,0))
 	
-	if(is_colliding() && resp == pergunta.get("respAtual") && get_node("Label") != null && get_node("CollisionShape2D") != null):
+	if(moko != null and is_colliding() && resp == pergunta.get("respAtual") && get_node("Label") != null && get_node("CollisionShape2D") != null):
 		sons.play("Acertou2")
 		moko.set("pontos", moko.get("pontos") + 10)
 		get_node("Label").queue_free()
@@ -31,8 +32,14 @@ func _fixed_process(delta):
 		if(pergunta.get("perguntas").size() - 1 >= pergunta.get("indiceAtual") + 1): 
 			pergunta.set("indiceAtual", pergunta.get("indiceAtual") + 1)
 		else: 
-			pergunta.set_text(str("Uhuuu"))
+			pergunta.set_text(str("Uhuuu!!"))
 			pergunta.set_fixed_process(false)
+			moko.queue_free()
+			get_node("/root/Node2D/FinalFase1/Panel").show()
+			get_node("/root/Node2D/FinalFase1/Label").show()
+			get_node("/root/Node2D/FinalFase1/Label1").show()
+			somFundo.stop()
+			sons.play("win")
 			
 		self.queue_free()
 		

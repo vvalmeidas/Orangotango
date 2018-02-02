@@ -14,7 +14,7 @@ func _fixed_process(delta):
 	move(Vector2(0,0))
 	if(is_colliding() and get_node("SpriteBanana")!=null and get_node("CollisionBanana")!= null):
 		sons.play("PegaBanana")
-		moko.set("pontos", moko.get("pontos") + 10)
+		moko.set("pontos", moko.get("pontos") + 5)
 		get_node("SpriteBanana").queue_free()
 		get_node("CollisionBanana").queue_free()
 		self.queue_free()

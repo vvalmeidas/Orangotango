@@ -11,4 +11,5 @@ func _ready():
 	pass
 
 func _fixed_process(delta):
-	self.set_text(str("Pontos: ", get_node("/root/Node2D/RigidBodyMoko").get("pontos")))
+	if(get_node("/root/Node2D/RigidBodyMoko") != null and get_node("/root/Node2D/RigidBodyMoko").get("pontos") != null):
+		self.set_text(str("Pontos: ", get_node("/root/Node2D/RigidBodyMoko").get("pontos")))
