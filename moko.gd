@@ -45,7 +45,7 @@ func _fixed_process(delta):
 			set_applied_force(Vector2(0, extra_gravity))
 			anim = "andar"
 		
-		elif (raycast_down.is_colliding() and raycast_down.get_collider() != null and raycast_down.get_collider().get_name() == "PlataformaMovel"):
+		elif (raycast_down.is_colliding() and raycast_down.get_collider() != null and (raycast_down.get_collider().get_name() == "PlataformaMovel" or raycast_down.get_collider().get_name() == "PlataformaMovel2")):
 				# Atualizando a posição do player à medida que a plataforma se move
 				current_speed = raycast_down.get_collider().velocity
 				set_applied_force(Vector2(0, 10000))
