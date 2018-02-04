@@ -57,9 +57,10 @@ func _fixed_process(delta):
 			anim = ""
 		
 		if (Input.is_key_pressed(KEY_SPACE) and is_on_ground()): 
+			sons.stop_all()
+			sons.play("Jump")
 			set_axis_velocity(Vector2(0,-jumpforce))
 			set_applied_force(Vector2(0, extra_gravity))
-			get_node("/root/Node2D/SamplePlayer2D").play("Jump")
 			
 		if animacao != anim:
 			get_node("Moko/AnimationPlayer").play(anim)
@@ -72,11 +73,12 @@ func _fixed_process(delta):
 			get_node("/root/Node2D/GameOver/Panel").show()
 			get_node("/root/Node2D/GameOver/Label").show()
 			sons.play("lose")
-				
+		
 		if(raycast_down.is_colliding() and raycast_down.get_collider() != null and raycast_down.get_collider().get_name() == "KinematicBodyFall"):
 			get_node("/root/Node2D/RigidBodyMoko").set("vidas", get_node("/root/Node2D/RigidBodyMoko").get("vidas") - 1)
 			get_node("/root/Node2D/HUD/SpriteVidas").set_frame(get_node("/root/Node2D/RigidBodyMoko").get("vidas"))
 			get_node("/root/Node2D/RigidBodyMoko").set_global_pos(Vector2(0, 0)) 
 			if(vidas > 0):
 				sons.play("caiu")
+
 			
